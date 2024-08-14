@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Категория: {{ category_name }}</title>
+    <!-- Подключение стилей Bootstrap -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
-    <!-- Навигационная панель    -->
+    <!-- Навигационная панель -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
+            <!-- Название сайта -->
             <a class="navbar-brand" href="/">Главная страница</a>
+            <!-- Кнопка для открытия меню -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <!-- Основное меню навигации -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
+                    <!-- Ссылки на основные страницы -->
                     <li class="nav-item">
                         <a class="nav-link" href="/">Главная</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/news/">Новости</a>
                     </li>
-                    <!-- Категории -->
+                    <!-- Меню категорий с выпадающим списком -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                             Категории
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- Ссылки на различные категории новостей -->
                             <li><a class="dropdown-item" href="/category/Все новости">Все новости</a></li>
                             <li><a class="dropdown-item" href="/category/Наука">Наука</a></li>
                             <li><a class="dropdown-item" href="/category/Культура">Культура</a></li>
@@ -41,15 +47,21 @@
         </div>
     </nav>
 
+    <!-- Основное содержимое страницы -->
     <div class="container my-4">
+        <!-- Заголовок категории -->
         <h1 class="mb-4">Категория: {{ category_name }}</h1>
         <div class="row">
+            <!-- Перебор новостей и вывод каждой в виде карточки -->
             {% for item in news %}
             <div class="col-md-8 mb-4">
                 <div class="card">
                     <div class="card-body">
+                        <!-- Заголовок новости -->
                         <h5 class="card-title">{{ item.title }}</h5>
+                        <!-- Краткое содержание новости -->
                         <p class="card-text">{{ item.text[:150] }}...</p>
+                        <!-- Ссылка для чтения полной новости -->
                         <a href="/news_detail/{{ loop.index0 }}" class="btn btn-primary">Читать далее</a>
                     </div>
                 </div>
@@ -58,13 +70,15 @@
         </div>
     </div>
 
-
+    <!-- footer -->
     <footer class="bg-light text-center py-4">
         <div class="container">
+            <!-- Текст авторских прав -->
             <p class="mb-0">© 2024 Новостной портал. Все права защищены.</p>
         </div>
     </footer>
 
+    <!-- Подключение скриптов jQuery, Popper и Bootstrap -->
     <script src="{{ url_for('static', filename='js/jquery-3.5.1.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
