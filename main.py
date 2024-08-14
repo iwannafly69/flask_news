@@ -2,6 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# Новости
 news = [
     {
         'title': 'Учёные обнаружили новый вид морских существ в глубинах Тихого океана',
