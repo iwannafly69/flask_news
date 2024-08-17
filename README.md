@@ -54,4 +54,4 @@ flask run
 Проект разработан [1sten](https://github.com/1sten)
 
 - Email: iwannafly666@yandex.ru
-- GitHub: [iwannafly](https://github.com/iwannafly)
+- GitHub: [iwannafly](https://github.com/iwannafly69)
