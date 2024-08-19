@@ -51,7 +51,7 @@ flask run
 
 ## Автор
 
-Проект разработан [1sten](https://github.com/1sten)
+Проект разработан [iwannafly69](https://github.com/1sten)
 
 - Email: iwannafly666@yandex.ru
-- GitHub: [iwannafly](https://github.com/iwannafly69)
+- GitHub: [iwannafly69](https://github.com/iwannafly69)
