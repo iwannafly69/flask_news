@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title% }
+{% block title %}
 Главная страница
 {% endblock title %}
 {% block content %}
@@ -11,11 +11,11 @@
         <!-- Заголовок новости -->
         <h5 class="card-title">{{ item.title }}</h5>
         <!-- Краткое содержание новости (первые 100 символов) -->
-        <p class="card-text">{{ item.text[:100] }}...</p>
+        <p class="card-text">{{ item.text|truncate(100) }}</p>
         <!-- Ссылка для чтения полной версии новости -->
-        <a href="/news_detail/{{ loop.index0 }}" class="btn btn-primary">Читать далее</a>
+        <a href="{{ url_for('news_detail', id=loop.index0) }}" class="btn btn-primary">Читать далее</a>
     </div>
-    {% include "footer.html" %}
+<!--{% include "footer.html" %}-->
 </div>
 {% endfor %}
 {% endblock content %}
