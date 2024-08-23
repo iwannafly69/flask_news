@@ -13,9 +13,11 @@
         <!-- Краткое содержание новости (первые 100 символов) -->
         <p class="card-text">{{ item.text|truncate(100) }}</p>
         <!-- Ссылка для чтения полной версии новости -->
-        <a href="{{ url_for('news_detail', id=loop.index0) }}" class="btn btn-primary">Читать далее</a>
+        <a href="{{ url_for('news_detail', id=item.id) }}" class="btn btn-primary">Читать далее</a>
     </div>
-<!--{% include "footer.html" %}-->
+<!--    {% include "footer.html" %}-->
 </div>
+{% else %}
+    <p class="card-text">Новостей пока нет!</p>
 {% endfor %}
 {% endblock content %}

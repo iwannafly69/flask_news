@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}
-{{ title }}
+{{ item.title }}
 {% endblock title %}
 {% block content %}
-    <h1>{{ title }}</h1>
+    <h1>{{ item.title }}</h1>
     <hr>
-    <p>{{ text }}</p>
+    <p>{{ item.text }}</p>
 {% endblock content %}
