@@ -1,57 +1,79 @@
-# Новостной портал
+# News Portal
 
-Этот проект представляет собой новостной портал, написанный на языке программирования Python с использованием веб-фреймворка Flask. Портал позволяет пользователям просматривать последние новости по различным категориям.
+This project is a simple news portal built using Python and Flask. The portal allows users to view news articles by categories, add new news articles, and view details of each article.
 
-## Описание
+## Features
 
-Новостной портал предоставляет следующие основные возможности:
+- View all news on the homepage.
+- Filter news by categories.
+- Detailed view for individual news articles.
+- Add new news articles.
 
-- Просмотр всех новостей на главной странице.
-- Фильтрация новостей по категориям, таким как "Наука", "Культура", "Образование".
-- Детальный просмотр выбранной новости на отдельной странице.
+## Technologies Used
 
-## Технологии
+- **Programming Language:** Python
+- **Web Framework:** Flask
+- **Database:** SQLite with SQLAlchemy ORM
+- **HTML Templating:** Jinja2
+- **Form Handling:** Flask-WTF
 
-- **Язык программирования:** Python
-- **Веб-фреймворк:** Flask
-- **Шаблонизатор:** Jinja2
-- **Стилизация:** Bootstrap
-- **JavaScript:** Для реализации интерактивных элементов.
-- **CSS:** Для стилизации страниц.
+## Installation & Setup
 
-## Установка и запуск
-
-### 1. Клонирование репозитория
-
-Склонируйте репозиторий на свой компьютер:
+### 1. Clone the repository:
 
 ```bash
 git clone https://github.com/yourusername/news-portal.git
 cd news-portal
 ```
-### 2. Установка зависимостей 
+### 2. Set up a virtual environment:
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # Для Linux/Mac
-
-venv\Scripts\activate  # Для Windows
+source venv/bin/activate  # For Linux/Mac
+venv\Scripts\activate  # For Windows
 pip install -r requirements.txt
 ```
-### 3. Запуск приложения
+### 3. Install the dependencies:
 
-Запустите Flask-приложение:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Initialize the database:
+
+```bash
+flask shell
+>>> from main import db
+>>> db.create_all()
+>>> exit()
+```
+
+### 5. Run the application:
+
 ```bash
 flask run
 ```
-Перейдите по адресу http://127.0.0.1:5000/ в вашем веб-браузере для доступа к новостному порталу.
 
-## Дополнительная информация
-Проект разработан с целью демонстрации навыков работы с Flask и реализации базового функционала новостного портала.
+Access the portal at http://127.0.0.1:5000 in your web browser.
 
-## Автор
+## Project Structure
 
-Проект разработан [iwannafly69](https://github.com/1sten)
+- **main.py:** Core application logic, including routing and database models.
+- **templates/:** HTML templates for different pages.
+- **static/:** Static assets like CSS and JS files.
+- **db.sqlite3:** SQLite database file.
+- **requirements.txt:** List of Python dependencies.
+
+## Usage
+
+- **Homepage:** Displays a list of all news articles.
+- **Add News:** Use the form to add a new news article, selecting a category.
+- **Category View:** View all news articles within a specific category.
+- **News Details:** View detailed information for a specific news article.
+
+
+## Author
+Developed by [iwannafly69](https://github.com/1sten)
 
 - Email: iwannafly666@yandex.ru
 - GitHub: [iwannafly69](https://github.com/iwannafly69)
