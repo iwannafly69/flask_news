@@ -1,9 +1,12 @@
 {% extends "base.html" %}
 {% block title %}
-{{ item.title }}
+{{ news.title }}
 {% endblock title %}
 {% block content %}
-    <h1>{{ item.title }}</h1>
+    <h1>{{ news.title }}</h1>
+    {% if news.category %}
+        <span>Категория: <a href="{{url_for('news_in_category', id=news.category.id)}}">{{ news.category.title }}</a></span>
+    {% endif %}
     <hr>
-    <p>{{ item.text }}</p>
+    <p>{{ news.text }}</p>
 {% endblock content %}
