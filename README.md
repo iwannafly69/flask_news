@@ -21,13 +21,13 @@ This project is a simple news portal built using Python and Flask. The portal al
 
 ### 1. Clone the repository:
 
-```bash
+```commandline
 git clone https://github.com/yourusername/news-portal.git
 cd news-portal
 ```
 ### 2. Set up a virtual environment:
 
-```bash
+```commandline
 python3 -m venv venv
 source venv/bin/activate  # For Linux/Mac
 venv\Scripts\activate  # For Windows
@@ -35,13 +35,13 @@ pip install -r requirements.txt
 ```
 ### 3. Install the dependencies:
 
-```bash
+```commandline
 pip install -r requirements.txt
 ```
 
 ### 4. Initialize the database:
 
-```bash
+```commandline
 flask shell
 >>> from main import db
 >>> db.create_all()
@@ -50,7 +50,7 @@ flask shell
 
 ### 5. Run the application:
 
-```bash
+```commandline
 flask run
 ```
 
