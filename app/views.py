@@ -27,17 +27,17 @@ def news_detail(id):
 @login_required
 def add_news():
     form = NewsForm()
-    categories = Category.query.all()
     if form.validate_on_submit():
         news = News()
         news.title = form.title.data
         news.text = form.text.data
         news.category_id = form.category.data
-        news.user_id = current_user.id  # Связать новость с пользователем
+        news.user_id = current_user.id
         db.session.add(news)
         db.session.commit()
         return redirect(url_for('news_detail', id=news.id))
-    return render_template('add_news.html', form=form, categories=categories)
+    return render_template('add_news.html', form=form)
+
 
 
 
@@ -93,6 +93,11 @@ def registration():
     form = RegistrationForm()
     categories = Category.query.all()
     if form.validate_on_submit():
+        # Проверка, существует ли уже пользователь с таким email
+        if User.query.filter_by(email=form.email.data).first():
+            flash('Пользователь с таким email уже существует.', 'alert-danger')
+            return redirect(url_for('registration'))
+
         user = User()
         user.username = form.username.data
         user.name = form.name.data
@@ -103,7 +108,6 @@ def registration():
         flash('Регистрация прошла успешно!', 'alert-success')
         return redirect(url_for('login'))
     return render_template('registration.html', form=form, categories=categories)
-
 
 @app.route('/logout/')
 @login_required
