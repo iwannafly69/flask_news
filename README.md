@@ -21,27 +21,28 @@ This project is a simple news portal built using Python and Flask. The portal al
 
 ### 1. Clone the repository:
 
-```commandline
-git clone https://github.com/yourusername/news-portal.git
-cd news-portal
+```bash
+git clone https://github.com/iwannafly69/flask_news.git
+cd flask_news
 ```
 ### 2. Set up a virtual environment:
 
-```commandline
+```bash
 python3 -m venv venv
 source venv/bin/activate  # For Linux/Mac
+
 venv\Scripts\activate  # For Windows
-pip install -r requirements.txt
+
 ```
 ### 3. Install the dependencies:
 
-```commandline
+```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Initialize the database:
 
-```commandline
+```bash
 flask shell
 >>> from main import db
 >>> db.create_all()
@@ -50,19 +51,12 @@ flask shell
 
 ### 5. Run the application:
 
-```commandline
+```bash
 flask run
 ```
 
 Access the portal at http://127.0.0.1:5000 in your web browser.
 
-## Project Structure
-
-- **main.py:** Core application logic, including routing and database models.
-- **templates/:** HTML templates for different pages.
-- **static/:** Static assets like CSS and JS files.
-- **db.sqlite3:** SQLite database file.
-- **requirements.txt:** List of Python dependencies.
 
 ## Usage
 
@@ -70,6 +64,8 @@ Access the portal at http://127.0.0.1:5000 in your web browser.
 - **Add News:** Use the form to add a new news article, selecting a category.
 - **Category View:** View all news articles within a specific category.
 - **News Details:** View detailed information for a specific news article.
+- **Registration** Allows you to register on the portal.
+- **Login** Allows you to log into your account on the portal.
 
 
 ## Author
